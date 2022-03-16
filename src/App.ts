@@ -74,7 +74,7 @@ export default class App {
             throw new Error(Errors.INCORRECT_CONFIG)
 
         const params: string = this.buildParams(options)
-        return `https://${this.props.nowSourceInstance}.service-now.com/api/sn_cicd/app_repo/publish?${params}`
+        return `https://${this.props.nowSourceInstance}.servicenowservices.com/api/sn_cicd/app_repo/publish?${params}`
     }
 
     /**
@@ -309,8 +309,8 @@ export default class App {
      */
     async getCurrentAppVersionTableApi(appSysID: string): Promise<string | false> {
         const appSysIdParam = appSysID ? '/' + appSysID : ''
-        const sysAppUrl = `https://${this.props.nowSourceInstance}.service-now.com/api/now/table/sys_app${appSysIdParam}?sysparm_fields=version,scope`
-        const sysAppCustomizationUrl = `https://${this.props.nowSourceInstance}.service-now.com/api/now/table/sys_app_customization${appSysIdParam}?sysparm_fields=version`
+        const sysAppUrl = `https://${this.props.nowSourceInstance}.servicenowservices.com/api/now/table/sys_app${appSysIdParam}?sysparm_fields=version,scope`
+        const sysAppCustomizationUrl = `https://${this.props.nowSourceInstance}.servicenowservices.com/api/now/table/sys_app_customization${appSysIdParam}?sysparm_fields=version`
         const urls = [sysAppUrl, sysAppCustomizationUrl]
 
         if (appSysID) {
